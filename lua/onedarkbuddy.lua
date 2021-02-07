@@ -14,7 +14,7 @@ local v = vim.g
 
 v.colors_name = 'onehalfbuddy'
 
--- {{{ Dark color scheme
+-- Dark color scheme {{{
 Color.new('red'          , '#e06c75')
 Color.new('green'        , '#98c379')
 Color.new('orange'       , '#e59F70')
@@ -50,8 +50,7 @@ Color.new('mono4'        , '#919baa')
 Color.new('mono5'        , '#abb2bf')
 
 -- }}}
-
--- {{{ Vim Terminal Colors
+-- Vim Terminal Colors {{{
 
 v.terminal_color_0  = "#313540"
 v.terminal_color_8  = "#4b5263"
@@ -71,8 +70,7 @@ v.terminal_color_7  = "#dcdfe4"
 v.terminal_color_15 = "#abb2bf"
 
 -- }}}
-
--- {{{ Syntax Groups (descriptions and ordering from `:h w18`)
+-- Syntax Groups (descriptions and ordering from `:h w18`) {{{
 
 Group.new('Comment'        , c.mono3        , c.none , no)    -- any comment
 
@@ -121,7 +119,6 @@ Group.new('Error'          , c.red          , c.none , no)    -- any erroneous c
 Group.new('Todo'           , c.purple       , c.none , b + r) -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 -- }}}
-
 -- Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{
 
 Group.new('ColorColumn'  , c.none         , c.mono1   , no)        -- used for the columns set with 'colorcolumn'
@@ -182,8 +179,7 @@ Group.new('Whitespace'   , c.mono3        , c.none    , no)        -- "nbsp", "s
 Group.new('WildMenu'     , c.blue         , c.none    , b + r)     -- current match in 'wildmenu' completion
 
 -- }}}
-
--- {{{ Language-Specific Highlighting
+-- Language-Specific Highlighting {{{
 
 -- Asciidoc
 Group.new('asciidocListingBlock' , c.mono4 , c.none , no)
@@ -535,8 +531,7 @@ Group.new('manTitle'  , g.String , g.String , g.String)
 Group.new('manFooter' , c.mono3  , c.none   , no)
 
 -- }}}
-
--- {{{ Plugin Highlighting
+-- Plugin Highlighting {{{
   --
 -- Netrw (vim builtin)
 Group.new('netrwDir'      , c.blue       , c.none , no)
@@ -562,8 +557,7 @@ Group.new('StartifyHeader'  , c.purple , c.none , no)
 Group.new('StartifyFooter'  , c.purple , c.none , no)
 
 -- }}}
-
--- {{{ Neovim Builtins
+-- Neovim Builtins {{{
 
 -- Neovim Support
 Group.new('healthError'   , g.Error  , g.Error , g.Error)
