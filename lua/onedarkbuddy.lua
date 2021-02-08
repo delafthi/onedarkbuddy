@@ -479,12 +479,6 @@ Group.new('rubyRegexpDelimiter'           , c.cyan   , c.none , no)
 Group.new('rubyStringDelimiter'           , c.green  , c.none , no)
 Group.new('rubySymbol'                    , c.cyan   , c.none , no)
 
--- Spelling
-Group.new('SpellBad'   , c.mono3 , c.none , uc)
-Group.new('SpellLocal' , c.mono3 , c.none , uc)
-Group.new('SpellCap'   , c.mono3 , c.none , uc)
-Group.new('SpellRare'  , c.mono3 , c.none , uc)
-
 -- Vim
 Group.new('vimCommand'      , c.purple , c.none , no)
 Group.new('vimCommentTitle' , c.mono3  , c.none , b)
