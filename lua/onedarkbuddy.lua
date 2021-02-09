@@ -31,7 +31,6 @@ Color.new('blue_dark'    , '#5f96c9')
 Color.new('purple_dark'  , '#a86cbb')
 Color.new('cyan_dark'    , '#51969f')
 
-
 Color.new('red_light'    , '#e8838c')
 Color.new('green_light'  , '#a6d18c')
 Color.new('orange_light' , '#ecb07e')
@@ -540,15 +539,15 @@ Group.new('netrwCmdSep'   , c.white      , c.none , no)
 Group.new('netrwVersion'  , c.purple     , c.none , no)
 
 -- Startify (mhinz/vim-startify)
-Group.new('StartifyBracket' , c.red    , c.none , no)
-Group.new('StartifyFile'    , c.yellow , c.none , b)
-Group.new('StartifyNumber'  , c.orange , c.none , no)
-Group.new('StartifyPath'    , c.green  , c.none , no)
-Group.new('StartifySlash'   , c.blue   , c.none , no)
-Group.new('StartifySection' , c.purple , c.none , b)
-Group.new('StartifySpecial' , c.yellow , c.none , b)
-Group.new('StartifyHeader'  , c.blue   , c.none , no)
-Group.new('StartifyFooter'  , c.blue   , c.none , no)
+Group.new('StartifyBracket' , c.white  , c.none , no)
+Group.new('StartifyFile'    , c.red    , c.none , b)
+Group.new('StartifyNumber'  , c.yellow , c.none , no)
+Group.new('StartifyPath'    , c.bluex  , c.none , no)
+Group.new('StartifySlash'   , c.white  , c.none , no)
+Group.new('StartifySection' , c.purple , c.none , no)
+Group.new('StartifySpecial' , c.mono3  , c.none , no)
+Group.new('StartifyHeader'  , c.green  , c.none , no)
+Group.new('StartifyFooter'  , c.green  , c.none , no)
 
 -- }}}
 -- Neovim Builtins {{{
