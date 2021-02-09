@@ -171,7 +171,7 @@ Group.new('TabLine'      , c.mono3        , c.mono1   , no)        -- tab  pages
 Group.new('TabLineFill'  , c.none         , c.mono1   , no)        -- tab  pages line, where there are no labels
 Group.new('TabLineSel'   , c.white        , c.mono1   , no)        -- tab  pages line, active tab page label
 Group.new('Title'        , c.green        , c.none    , b)         -- titles for output from ":set all", ":autocmd" etc.
-Group.new('Visual'       , c.blue         , c.black   , r)         -- Visual mode selection
+Group.new('Visual'       , c.black        , c.blue    , no)         -- Visual mode selection
 Group.new('VisualNOS'    , g.Visual       , g.Visual  , g.Visual)  -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 Group.new('WarningMsg'   , c.yellow       , c.none    , no)        -- warning messages
 Group.new('Whitespace'   , c.mono3        , c.none    , no)        -- "nbsp", "space", "tab" and "trail" in 'listchars'
