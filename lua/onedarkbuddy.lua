@@ -10,9 +10,8 @@ local ul = s.underline
 local r = s.reverse
 local sto = s.standout
 local no = s.NONE
-local v = vim.g
 
-v.colors_name = 'onehalfbuddy'
+vim.g.colors_name = 'onehalfbuddy'
 
 -- Dark color scheme {{{1
 Color.new('red'          , '#e06c75')
@@ -50,22 +49,22 @@ Color.new('mono5'        , '#abb2bf')
 
 -- Vim Terminal Colors {{{1
 
-v.terminal_color_0  = "#313540"
-v.terminal_color_8  = "#4b5263"
-v.terminal_color_1  = "#e06c75"
-v.terminal_color_9  = "#e8838c"
-v.terminal_color_2  = "#98c379"
-v.terminal_color_10 = "#a6d18c"
-v.terminal_color_3  = "#e5c07b"
-v.terminal_color_11 = "#eccd84"
-v.terminal_color_4  = "#61afef"
-v.terminal_color_12 = "#75c2f3"
-v.terminal_color_5  = "#c678dd"
-v.terminal_color_13 = "#d38de6"
-v.terminal_color_6  = "#56b6c2"
-v.terminal_color_14 = "#69c7d1"
-v.terminal_color_7  = "#dcdfe4"
-v.terminal_color_15 = "#abb2bf"
+vim.g.terminal_color_0  = "#313540"
+vim.g.terminal_color_8  = "#4b5263"
+vim.g.terminal_color_1  = "#e06c75"
+vim.g.terminal_color_9  = "#e8838c"
+vim.g.terminal_color_2  = "#98c379"
+vim.g.terminal_color_10 = "#a6d18c"
+vim.g.terminal_color_3  = "#e5c07b"
+vim.g.terminal_color_11 = "#eccd84"
+vim.g.terminal_color_4  = "#61afef"
+vim.g.terminal_color_12 = "#75c2f3"
+vim.g.terminal_color_5  = "#c678dd"
+vim.g.terminal_color_13 = "#d38de6"
+vim.g.terminal_color_6  = "#56b6c2"
+vim.g.terminal_color_14 = "#69c7d1"
+vim.g.terminal_color_7  = "#dcdfe4"
+vim.g.terminal_color_15 = "#abb2bf"
 
 -- Syntax Groups (descriptions and ordering from `:h w18`) {{{1
 
@@ -136,7 +135,7 @@ Group.new('ErrorMsg'     , c.red          , c.none    , no)        -- error mess
 Group.new('VertSplit'    , c.mono4        , c.none    , b)         -- the column separating vertically split windows
 Group.new('Folded'       , c.none         , c.mono2   , b)         -- line used for closed folds
 Group.new('FoldColumn'   , c.none         , c.mono2   , no)        -- 'foldcolumn'
-Group.new('SignColumn'   , c.none         , c.none   , no)        -- column where signs are displayed
+Group.new('SignColumn'   , c.none         , c.none   , no)         -- column where signs are displayed
 Group.new('IncSearch'    , c.yellow_dark  , c.none    , b + r)     -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 Group.new('Substitute'   , c.yellow_dark  , c.none    , b + r)     -- :substitute replacement text highlighting
 Group.new('LineNr'       , c.mono2        , c.none    , no)        -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -340,7 +339,7 @@ Group.new('jsDocParam'                        , c.blue     , c.none , no)
 Group.new('jsDocTags'                         , c.purple   , c.none , no)
 Group.new('jsFuncBraces'                      , c.mono4    , c.none , no)
 Group.new('jsFuncCall'                        , c.blue     , c.none , no)
-Group.new('jsFuncParens'                      , c.mono4    , c.none , no)
+Group.new('jsFuncParens'                      , c.blue    , c.none , no)
 Group.new('jsFunction'                        , c.purple   , c.none , no)
 Group.new('jsGlobalObjects'                   , c.yellow   , c.none , no)
 Group.new('jsModuleWords'                     , c.purple   , c.none , no)
@@ -348,7 +347,7 @@ Group.new('jsModules'                         , c.purple   , c.none , no)
 Group.new('jsNoise'                           , c.mono4    , c.none , no)
 Group.new('jsNull'                            , c.orange   , c.none , no)
 Group.new('jsOperator'                        , c.purple   , c.none , no)
-Group.new('jsParens'                          , c.mono4    , c.none , no)
+Group.new('jsParens'                          , c.blue    , c.none , no)
 Group.new('jsStorageClass'                    , c.purple   , c.none , no)
 Group.new('jsTemplateBraces'                  , c.red_dark , c.none , no)
 Group.new('jsTemplateVar'                     , c.green    , c.none , no)
@@ -475,16 +474,16 @@ Group.new('rubyStringDelimiter'           , c.green  , c.none , no)
 Group.new('rubySymbol'                    , c.cyan   , c.none , no)
 
 -- Vim
-Group.new('vimCommand'      , c.purple , c.none , no)
-Group.new('vimCommentTitle' , c.mono3  , c.none , b)
-Group.new('vimFunction'     , c.cyan   , c.none , no)
-Group.new('vimFuncName'     , c.purple , c.none , no)
-Group.new('vimHighlight'    , c.blue   , c.none , no)
-Group.new('vimLineComment'  , c.mono3  , c.none , i)
-Group.new('vimParenSep'     , c.mono4  , c.none , no)
-Group.new('vimSep'          , c.mono4  , c.none , no)
-Group.new('vimUserFunc'     , c.cyan   , c.none , no)
-Group.new('vimVar'          , c.red    , c.none , no)
+Group.new('vimCommand'      , c.red        , g.Keyword  , g.Keyword)
+Group.new('vimCommentTitle' , g.Comment    , g.Comment  , b)
+Group.new('vimFunction'     , c.blue       , g.Function , g.Function)
+Group.new('vimFuncName'     , c.blue_dark  , g.Function , g.Function)
+Group.new('vimHighlight'    , c.blue       , c.mono1    , no)
+Group.new('vimLineComment'  , g.Comment    , g.Comment  , g.Comment)
+Group.new('vimParenSep'     , c.blue       , c.none     , no)
+Group.new('vimSep'          , c.white      , c.none     , no)
+Group.new('vimUserFunc'     , c.blue_light , g.Function , g.Function)
+Group.new('vimVar'          , c.yellow     , c.none     , no)
 
 -- XML
 Group.new('xmlAttrib'  , c.yellow , c.none , no)
