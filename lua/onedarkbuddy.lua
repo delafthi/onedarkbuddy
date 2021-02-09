@@ -14,7 +14,7 @@ local v = vim.g
 
 v.colors_name = 'onehalfbuddy'
 
--- Dark color scheme {{{
+-- Dark color scheme {{{1
 Color.new('red'          , '#e06c75')
 Color.new('green'        , '#98c379')
 Color.new('orange'       , '#e59F70')
@@ -48,8 +48,7 @@ Color.new('mono3'        , '#5c6370')
 Color.new('mono4'        , '#919baa')
 Color.new('mono5'        , '#abb2bf')
 
--- }}}
--- Vim Terminal Colors {{{
+-- Vim Terminal Colors {{{1
 
 v.terminal_color_0  = "#313540"
 v.terminal_color_8  = "#4b5263"
@@ -68,8 +67,7 @@ v.terminal_color_14 = "#69c7d1"
 v.terminal_color_7  = "#dcdfe4"
 v.terminal_color_15 = "#abb2bf"
 
--- }}}
--- Syntax Groups (descriptions and ordering from `:h w18`) {{{
+-- Syntax Groups (descriptions and ordering from `:h w18`) {{{1
 
 Group.new('Comment'        , c.mono3        , c.none , no)    -- any comment
 
@@ -117,8 +115,7 @@ Group.new('Error'          , c.red          , c.none , no)    -- any erroneous c
 
 Group.new('Todo'           , c.purple       , c.none , b + r) -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
--- }}}
--- Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{
+-- Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{1
 
 Group.new('ColorColumn'  , c.none         , c.mono1   , no)        -- used for the columns set with 'colorcolumn'
 Group.new('Conceal'      , c.none         , c.none    , no)        -- placeholder characters substituted for concealed text (see 'conceallevel')
@@ -136,7 +133,7 @@ Group.new('EndOfBuffer'  , c.mono1        , c.none    , no)        -- filler lin
 Group.new('TermCursor'   , c.white        , c.none    , b + r)     -- cursor in a focused terminal
 Group.new('TermCursorNC' , c.mono2        , c.none    , b + r)     -- cursor in an unfocused terminal
 Group.new('ErrorMsg'     , c.red          , c.none    , no)        -- error messages on the command line
-Group.new('VertSplit'    , c.white        , c.none    , b)         -- the column separating vertically split windows
+Group.new('VertSplit'    , c.mono4        , c.none    , b)         -- the column separating vertically split windows
 Group.new('Folded'       , c.none         , c.mono2   , b)         -- line used for closed folds
 Group.new('FoldColumn'   , c.none         , c.mono2   , no)        -- 'foldcolumn'
 Group.new('SignColumn'   , c.none         , c.none   , no)        -- column where signs are displayed
@@ -171,14 +168,13 @@ Group.new('TabLine'      , c.mono3        , c.mono1   , no)        -- tab  pages
 Group.new('TabLineFill'  , c.none         , c.mono1   , no)        -- tab  pages line, where there are no labels
 Group.new('TabLineSel'   , c.white        , c.mono1   , no)        -- tab  pages line, active tab page label
 Group.new('Title'        , c.green        , c.none    , b)         -- titles for output from ":set all", ":autocmd" etc.
-Group.new('Visual'       , c.black        , c.blue    , n)         -- Visual mode selection
+Group.new('Visual'       , c.black        , c.blue    , no)         -- Visual mode selection
 Group.new('VisualNOS'    , g.Visual       , g.Visual  , g.Visual)  -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 Group.new('WarningMsg'   , c.yellow       , c.none    , no)        -- warning messages
 Group.new('Whitespace'   , c.mono3        , c.none    , no)        -- "nbsp", "space", "tab" and "trail" in 'listchars'
 Group.new('WildMenu'     , c.blue         , c.none    , b + r)     -- current match in 'wildmenu' completion
 
--- }}}
--- Language-Specific Highlighting {{{
+-- Language-Specific Highlighting {{{1
 
 -- Asciidoc
 Group.new('asciidocListingBlock' , c.mono4 , c.none , no)
@@ -523,8 +519,7 @@ Group.new('rustCommentBlockDocError' , c.mono3 , c.none , no)
 Group.new('manTitle'  , g.String , g.String , g.String)
 Group.new('manFooter' , c.mono3  , c.none   , no)
 
--- }}}
--- Plugin Highlighting {{{
+-- Plugin Highlighting {{{1
   --
 -- Netrw (vim builtin)
 Group.new('netrwDir'      , c.blue       , c.none , no)
@@ -549,8 +544,7 @@ Group.new('StartifySpecial' , c.mono3  , c.none , no)
 Group.new('StartifyHeader'  , c.green  , c.none , no)
 Group.new('StartifyFooter'  , c.green  , c.none , no)
 
--- }}}
--- Neovim Builtins {{{
+-- Neovim Builtins {{{1
 
 -- Neovim Support
 Group.new('healthError'   , g.Error  , g.Error , g.Error)
@@ -634,4 +628,4 @@ Group.new('TSTypeBuiltin'        , g.Type         , g.Type        , g.Type)     
 Group.new('TSVariable'           , c.purple_light , c.none        , no)            -- Variable names
 Group.new('TSVariableBuiltin'    , c.yellow       , c.none        , no)            -- Variable names that are defined by the languages, like `this` or `self`.
 
--- }}}
+-- }}}1
