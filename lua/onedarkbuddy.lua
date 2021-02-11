@@ -132,7 +132,7 @@ Group.new('EndOfBuffer'  , c.mono1        , c.none    , no)        -- filler lin
 Group.new('TermCursor'   , c.white        , c.none    , b + r)     -- cursor in a focused terminal
 Group.new('TermCursorNC' , c.mono2        , c.none    , b + r)     -- cursor in an unfocused terminal
 Group.new('ErrorMsg'     , c.red          , c.none    , no)        -- error messages on the command line
-Group.new('VertSplit'    , c.mono4        , c.none    , b)         -- the column separating vertically split windows
+Group.new('VertSplit'    , c.mono1        , c.none    , b)         -- the column separating vertically split windows
 Group.new('Folded'       , c.none         , c.mono2   , b)         -- line used for closed folds
 Group.new('FoldColumn'   , c.none         , c.mono2   , no)        -- 'foldcolumn'
 Group.new('SignColumn'   , c.none         , c.none   , no)         -- column where signs are displayed
