@@ -163,9 +163,9 @@ Group.new('SpellLocal'   , c.yellow_dark  , c.none    , no)        -- Word that 
 Group.new('SpellRare'    , c.yellow_light , c.none    , no)        -- Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 Group.new('StatusLine'   , c.white        , c.mono1   , no)        -- status line of current window
 Group.new('StatusLineNC' , c.mono4        , c.mono1   , no)        -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-Group.new('TabLine'      , c.mono3        , c.mono1   , no)        -- tab  pages line, not active tap page label
-Group.new('TabLineFill'  , c.none         , c.mono1   , no)        -- tab  pages line, where there are no labels
-Group.new('TabLineSel'   , c.white        , c.mono1   , no)        -- tab  pages line, active tab page label
+Group.new('TabLine'      , c.mono3        , c.mono1   , no)        -- tab pages line, not active tap page label
+Group.new('TabLineFill'  , c.none         , c.mono1   , no)        -- tab pages line, where there are no labels
+Group.new('TabLineSel'   , c.white        , c.black   , no)        -- tab pages line, active tab page label
 Group.new('Title'        , c.green        , c.none    , b)         -- titles for output from ":set all", ":autocmd" etc.
 Group.new('Visual'       , c.black        , c.blue    , no)         -- Visual mode selection
 Group.new('VisualNOS'    , g.Visual       , g.Visual  , g.Visual)  -- Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
