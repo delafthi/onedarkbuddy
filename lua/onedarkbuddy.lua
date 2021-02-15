@@ -543,6 +543,19 @@ Group.new('StartifySpecial' , c.mono3  , c.none , no)
 Group.new('StartifyHeader'  , c.green  , c.none , no)
 Group.new('StartifyFooter'  , c.green  , c.none , no)
 
+-- Telescope (nvim-telescope/telescope.nvim)
+Group.new('TelescopeSelection'      , c.blue_dark , c.mono1  , b)
+Group.new('TelescopeSelectionCaret' , c.purple    , c.mono1  , b)
+Group.new('TelescopeMultiSelection' , c.orange    , c.none   , no)
+Group.new('TelescopeNormal'         , c.white     , c.none   , no)
+Group.new('TelescopeBorder'         , c.mono4     , c.none   , no)
+Group.new('TelescopePromptBorder'   , c.mono4     , c.none   , no)
+Group.new('TelescopeResultBorder'   , c.mono4     , c.none   , no)
+Group.new('TelescopePreviewBorder'  , c.mono4     , c.none   , no)
+Group.new('TelescopeMatching'       , c.black     , c.yellow , no)
+Group.new('TelescopePromptPrefix'   , c.purple    , c.none   , b)
+
+
 -- Neovim Builtins {{{1
 
 -- Neovim Support
