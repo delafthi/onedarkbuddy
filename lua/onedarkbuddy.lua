@@ -66,54 +66,6 @@ vim.g.terminal_color_14 = "#69c7d1"
 vim.g.terminal_color_7  = "#dcdfe4"
 vim.g.terminal_color_15 = "#abb2bf"
 
--- Syntax Groups (descriptions and ordering from `:h w18`) {{{1
-
-Group.new('Comment'        , c.mono3        , c.none , no)    -- any comment
-
-Group.new('Constant'       , c.cyan         , c.none , no)    -- any constant
-Group.new('String'         , c.green        , c.none , no)    -- this is a string
-Group.new('Character'      , c.green_light  , c.none , no)    -- a character constant: 'c', '\n'
-Group.new('Number'         , c.orange       , c.none , no)    -- a boolean constant: TRUE, false
-Group.new('Boolean'        , c.orange_light , c.none , no)    -- a boolean constant: TRUE, false
-Group.new('Float'          , c.orange_dark  , c.none , no)    -- a floating point constant: 2.3e10
-
-Group.new('Identifier'     , c.red          , c.none , no)    -- any variable name
-Group.new('Function'       , c.blue         , c.none , b)     -- function name (also: methods for classes)
-
-Group.new('Statement'      , c.purple       , c.none , i)     -- any statement
-Group.new('Conditional'    , c.purple       , c.none , i)     -- if, then, else, endif, switch, etc.
-Group.new('Repeat'         , c.purple       , c.none , i)     -- for, do, while, etc.
-Group.new('Label'          , c.purple       , c.none , i)     -- case, default, etc.
-Group.new('Operator'       , c.purple_light , c.none , no)    -- sizeof", "+", "*", etc.
-Group.new('Keyword'        , c.blue         , c.none , i)     -- any other keyword
-Group.new('Exception'      , c.purple_dark  , c.none , i)     -- try, catch, throw
-
-Group.new('PreProc'        , c.yellow       , c.none , no)    -- generic Preprocessor
-Group.new('Include'        , c.blue         , c.none , no)    -- preprocessor #include
-Group.new('Define'         , c.purple       , c.none , no)    -- preprocessor #define
-Group.new('Macro'          , c.purple       , c.none , b)     -- same as Define
-Group.new('PreCondit'      , c.yellow       , c.none , no)    -- preprocessor #if, #else, #endif, etc.
-
-Group.new('Type'           , c.yellow       , c.none , no)    -- int, long, char, etc.
-Group.new('StorageClass'   , c.yellow_dark  , c.none , b)     -- static, register, volatile, etc.
-Group.new('Structure'      , c.yellow_light , c.none , b)     -- struct, union, enum, etc.
-Group.new('Typedef'        , c.yellow_light , c.none , no)    -- A typedef
-
-Group.new('Special'        , c.blue         , c.none , i)     -- any special symbol
-Group.new('SpecialChar'    , c.yellow_dark  , c.none , b)     -- special character in a constant
-Group.new('Tag'            , c.none         , c.none , no)    -- you can use CTRL-] on this
-Group.new('Delimiter'      , c.none         , c.none , no)    -- character that needs attention
-Group.new('SpecialComment' , c.mono3        , c.none , no)    -- special things inside a comment
-Group.new('Debug'          , c.none         , c.none , b)     -- debugging statements
-
-Group.new('Underlined'     , c.blue         , c.none , ul)    -- text that stands out, HTML links
-
-Group.new('Ignore'         , c.none         , c.none , no)    -- left blank, hidden
-
-Group.new('Error'          , c.red          , c.none , no)    -- any erroneous construct
-
-Group.new('Todo'           , c.purple       , c.none , b + r) -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-
 -- Highlighting Groups (descriptions and ordering from `:h highlight-groups`) {{{1
 
 Group.new('ColorColumn'  , c.none         , c.mono1   , no)        -- used for the columns set with 'colorcolumn'
@@ -172,6 +124,54 @@ Group.new('VisualNOS'    , g.Visual       , g.Visual  , g.Visual)  -- Visual mod
 Group.new('WarningMsg'   , c.yellow       , c.none    , no)        -- warning messages
 Group.new('Whitespace'   , c.mono3        , c.none    , no)        -- "nbsp", "space", "tab" and "trail" in 'listchars'
 Group.new('WildMenu'     , c.blue         , c.none    , b + r)     -- current match in 'wildmenu' completion
+
+-- Syntax Groups (descriptions and ordering from `:h w18`) {{{1
+
+Group.new('Comment'        , c.mono3        , c.none , no)    -- any comment
+
+Group.new('Constant'       , c.orange       , c.none , no)    -- any constant
+Group.new('String'         , c.green        , c.none , no)    -- this is a string
+Group.new('Character'      , c.green_light  , c.none , no)    -- a character constant: 'c', '\n'
+Group.new('Number'         , c.yellow       , c.none , no)    -- a boolean constant: TRUE, false
+Group.new('Boolean'        , c.orange       , c.none , no)    -- a boolean constant: TRUE, false
+Group.new('Float'          , c.yellow_light , c.none , no)    -- a floating point constant: 2.3e10
+
+Group.new('Identifier'     , c.red          , c.none , no)    -- any variable name
+Group.new('Function'       , c.blue         , c.none , b)     -- function name (also: methods for classes)
+
+Group.new('Statement'      , c.purple       , c.none , i)     -- any statement
+Group.new('Conditional'    , c.purple       , c.none , i)     -- if, then, else, endif, switch, etc.
+Group.new('Repeat'         , c.purple       , c.none , i)     -- for, do, while, etc.
+Group.new('Label'          , c.purple       , c.none , i)     -- case, default, etc.
+Group.new('Operator'       , c.cyan         , c.none , no)    -- sizeof", "+", "*", etc.
+Group.new('Keyword'        , c.red          , c.none , i)     -- any other keyword
+Group.new('Exception'      , c.red_light    , c.none , i)     -- try, catch, throw
+
+Group.new('PreProc'        , c.yellow       , c.none , no)    -- generic Preprocessor
+Group.new('Include'        , c.blue         , c.none , no)    -- preprocessor #include
+Group.new('Define'         , c.purple       , c.none , no)    -- preprocessor #define
+Group.new('Macro'          , c.purple       , c.none , b)     -- same as Define
+Group.new('PreCondit'      , c.yellow       , c.none , no)    -- preprocessor #if, #else, #endif, etc.
+
+Group.new('Type'           , c.yellow       , c.none , no)    -- int, long, char, etc.
+Group.new('StorageClass'   , c.yellow       , c.none , b)     -- static, register, volatile, etc.
+Group.new('Structure'      , c.yellow       , c.none , b)     -- struct, union, enum, etc.
+Group.new('Typedef'        , c.yellow       , c.none , no)    -- A typedef
+
+Group.new('Special'        , c.blue         , c.none , i)     -- any special symbol
+Group.new('SpecialChar'    , c.none         , c.none , b)     -- special character in a constant
+Group.new('Tag'            , c.none         , c.none , no)    -- you can use CTRL-] on this
+Group.new('Delimiter'      , c.white        , c.none , no)    -- character that needs attention
+Group.new('SpecialComment' , c.mono4        , c.none , no)    -- special things inside a comment
+Group.new('Debug'          , c.none         , c.none , b)     -- debugging statements
+
+Group.new('Underlined'     , c.blue         , c.none , ul)    -- text that stands out, HTML links
+
+Group.new('Ignore'         , c.none         , c.none , no)    -- left blank, hidden
+
+Group.new('Error'          , c.red          , c.none , no)    -- any erroneous construct
+
+Group.new('Todo'           , c.purple       , c.none , b + r) -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
 -- Language-Specific Highlighting {{{1
 
@@ -431,21 +431,22 @@ Group.new('purescriptType'        , c.yellow , c.none , no)
 Group.new('purescriptTypeVar'     , c.red    , c.none , no)
 Group.new('purescriptConstructor' , c.red    , c.none , no)
 Group.new('purescriptOperator'    , c.white  , c.none , no)
+Color.new('mono_1', "#abb2bf")
 
 -- Python
 Group.new('pythonImport'          , c.purple      , c.none      , no)
 Group.new('pythonBuiltin'         , c.orange      , c.none      , no)
 Group.new('pythonStatement'       , g.Statement   , g.Statement , g.Statement)
 Group.new('pythonParam'           , c.cyan        , c.none      , no)
-Group.new('pythonSelf'            , c.yellow      , c.none      , i)
-Group.new('pythonClass'           , c.yellow      , c.none      , no)
+Group.new('pythonSelf'            , c.yellow      , c.none      , no)
+Group.new('pythonClass'           , c.blue        , c.none      , no)
 Group.new('pythonOperator'        , g.Operator    , g.Operator  , g.Operator)
 Group.new('pythonEscape'          , c.cyan        , c.none      , no)
 Group.new('pythonFunction'        , g.Function    , g.Function  , g.Function)
 Group.new('pythonKeyword'         , g.Keyword     , g.Keyword   , g.Keyword)
-Group.new('pythonModule'          , c.red         , c.none      , no)
+Group.new('pythonModule'          , c.purple      , c.none      , no)
 Group.new('pythonStringDelimiter' , c.green       , c.none      , no)
-Group.new('pythonSymbol'          , c.yellow_dark , c.none      , no)
+Group.new('pythonSymbol'          , c.cyan        , c.none      , no)
 
 -- Ruby
 Group.new('rubyBlock'                     , c.purple , c.none , no)
@@ -611,32 +612,32 @@ Group.new('TSKeyword'            , g.Keyword      , g.Keyword     , g.Keyword)  
 Group.new('TSKeywordFunction'    , c.red          , c.none        , no)            -- For keywords used to define a function.
 Group.new('TSLabel'              , g.Label        , g.Label       , g.Label)       -- For labels: `label:` in C and `:label:` in Lua
 Group.new('TSMethod'             , c.blue         , c.none        , no)            -- For method calls and definitions.
-Group.new('TSNamespace'          , c.purple_light , c.none        , no)            -- For identifiers referring to modules and namespaces.
+Group.new('TSNamespace'          , c.red_light    , c.none        , no)            -- For identifiers referring to modules and namespaces.
 Group.new('TSNumber'             , g.Number       , g.Number      , g.Number)      -- For integers
 Group.new('TSOperator'           , g.Operator     , g.Operator    , g.Operator)    -- For any operator: `+`, but also `->` and `*` in C
 Group.new('TSParameter'          , c.cyan         , c.none        , no)            -- For parameters of a function.
 Group.new('TSParameterReference' , g.TSParameter  , g.TSParameter , g.TSParameter) -- For references to parameters of a function.
 Group.new('TSProperty'           , g.TSField      , g.TSField     , g.TSField)     -- Same as `TSField`.
-Group.new('TSPunctDelimiter'     , g.Delimiter    , g.Delimiter   , g.Delimiter)   -- For delimiters ie: `.
+Group.new('TSPunctDelimiter'     , g.Delimiter    , g.Delimiter   , g.Delimiter)   -- For delimiters ie: `.`
 Group.new('TSPunctBracket'       , c.blue         , c.none        , no)            -- For brackets and parens
 Group.new('TSPunctSpecial'       , c.white        , c.none        , no)            -- For special punctuation that does not fall in the categories before
 Group.new('TSRepeat'             , g.Repeat       , g.Repeat      , g.Repeat)      -- For keywords related to loops
 Group.new('TSString'             , g.String       , g.String      , g.String)      -- For strings
-Group.new('TSStringRegex'        , c.green_dark   , c.none        , no)            -- For regexes
+Group.new('TSStringRegex'        , c.green_light  , c.none        , no)            -- For regexes
 Group.new('TSStringEscape'       , c.cyan         , c.none        , no)            -- For escape characters within a string
 Group.new('TSStructure'          , g.Structure    , g.Structure   , g.Structure)   -- This is left as an exercise for the reader.
-Group.new('TSStrong'             , c.yellow       , c.none        , b)             -- For text to be represented with strong.
+Group.new('TSStrong'             , c.none         , c.none        , b)             -- For text to be represented with strong.
 Group.new('TSTag'                , g.Tag          , g.Tag         , g.Tag)         -- Tags like html tag names.
-Group.new('TSTagDelimeter'       , c.purple       , c.none        , no)            -- Tag delimiter link < > /
-Group.new('TSText'               , c.yellow       , c.none        , no)            -- For strings considered text in a markup language.
-Group.new('TSEmphasis'           , c.yellow       , c.none        , i)             -- For text to be represented with emphasis.
-Group.new('TSUnderline'          , c.yellow       , c.none        , ul)            -- TSUnderline
-Group.new('TSTitle'              , c.red          , c.none        , b)             -- Text that is part of a title.
-Group.new('TSLiteral'            , c.cyan         , c.none        , b)             -- Literal text.
+Group.new('TSTagDelimeter'       , c.blue         , c.none        , no)            -- Tag delimiter link < > /
+Group.new('TSText'               , c.green_dark   , c.none        , no)            -- For strings considered text in a markup language.
+Group.new('TSEmphasis'           , c.none         , c.none        , i)             -- For text to be represented with emphasis.
+Group.new('TSUnderline'          , c.blue         , c.none        , ul)            -- TSUnderline
+Group.new('TSTitle'              , c.none         , c.none        , b)             -- Text that is part of a title.
+Group.new('TSLiteral'            , c.green_dark   , c.none        , no)            -- Literal text.
 Group.new('TSURI'                , c.blue         , c.none        , ul)            -- Any URI like a link or email.
 Group.new('TSType'               , g.Type         , g.Type        , g.Type)        -- For types.
 Group.new('TSTypeBuiltin'        , g.Type         , g.Type        , g.Type)        -- For builtin types (you guessed it, right ?).
-Group.new('TSVariable'           , c.purple_light , c.none        , no)            -- Variable names
+Group.new('TSVariable'           , c.white        , c.none        , no)            -- Variable names
 Group.new('TSVariableBuiltin'    , c.yellow       , c.none        , no)            -- Variable names that are defined by the languages, like `this` or `self`.
 
 -- }}}1
