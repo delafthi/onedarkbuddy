@@ -565,9 +565,9 @@ Group.new('healthSuccess' , c.green  , c.none  , no)
 Group.new('TermCursorNC'  , c.white  , c.none  , r)
 
 -- LSP Groups (descriptions and ordering from `:h lsp-highlight`)
-Group.new('LspReferenceText'                     , c.mono4                            , c.none                             , no)                                 -- used for highlighting "text" references
-Group.new('LspReferenceRead'                     , c.mono4                            , c.none                             , no)                                 -- used for highlighting "read" references
-Group.new('LspReferenceWrite'                    , c.mono4                            , c.none                             , no)                                 -- used for highlighting "write" references
+Group.new('LspReferenceText'                     , c.none                             , c.none                             , b + ul)                                 -- used for highlighting "text" references
+Group.new('LspReferenceRead'                     , c.none                             , c.none                             , b + ul)                                 -- used for highlighting "read" references
+Group.new('LspReferenceWrite'                    , c.none                             , c.none                             , b + ul)                                 -- used for highlighting "write" references
 Group.new('LspDiagnosticsDefaultError'           , g.Error                            , g.Error                            , g.Error)                            -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 Group.new('LspDiagnosticsDefaultWarning'         , c.yellow                           , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 Group.new('LspDiagnosticsDefaultInformation'     , c.blue                             , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
