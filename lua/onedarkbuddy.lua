@@ -116,7 +116,7 @@ Group.new('SpellCap'     , c.yellow       , c.none    , no)        -- Word that 
 Group.new('SpellLocal'   , c.yellow_dark  , c.none    , no)        -- Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 Group.new('SpellRare'    , c.yellow_light , c.none    , no)        -- Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 Group.new('StatusLine'   , c.white        , c.mono0   , no)        -- status line of current window
-Group.new('StatusLineNC' , c.mono5        , c.mono0   , no)        -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+Group.new('StatusLineNC' , c.mono0        , c.none    , b)         -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 Group.new('TabLine'      , c.mono4        , c.mono0   , no)        -- tab pages line, not active tap page label
 Group.new('TabLineFill'  , c.none         , c.mono0   , no)        -- tab pages line, where there are no labels
 Group.new('TabLineSel'   , c.white        , c.black   , no)        -- tab pages line, active tab page label
