@@ -642,7 +642,8 @@ Group.new('TelescopeMatching'       , c.black     , c.yellow , no)
 Group.new('TelescopePromptPrefix'   , c.purple    , c.none   , b)
 
 -- Quick-scope (unblevable/quick-scope)
-Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
-Group.new('QuickScopeSecondary'    , c.none , c.none , b + uc)
+-- Setting the colors here, makes the underlines stay after leaving the line
+-- Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
+-- Group.new('QuickScopeSecondary'    , c.none , c.none , b + uc)
 
 -- }}}1
