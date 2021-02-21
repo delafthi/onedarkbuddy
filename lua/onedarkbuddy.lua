@@ -175,6 +175,90 @@ Group.new('Error'          , c.red          , c.none , no)    -- any erroneous c
 
 Group.new('Todo'           , c.purple       , c.none , b + r) -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
+-- Neovim Builtins {{{1
+
+-- Neovim Support
+Group.new('healthError'   , g.Error  , g.Error , g.Error)
+Group.new('healthWarning' , c.yellow , c.none  , no)
+Group.new('healthSuccess' , c.green  , c.none  , no)
+Group.new('TermCursorNC'  , c.white  , c.none  , r)
+
+-- LSP Groups (descriptions and ordering from `:h lsp-highlight`)
+Group.new('LspReferenceText'                     , c.none                             , c.none                             , b + ul)                             -- used for highlighting "text" references
+Group.new('LspReferenceRead'                     , c.none                             , c.none                             , b + ul)                             -- used for highlighting "read" references
+Group.new('LspReferenceWrite'                    , c.none                             , c.none                             , b + ul)                             -- used for highlighting "write" references
+Group.new('LspDiagnosticsDefaultError'           , g.Error                            , g.Error                            , g.Error)                            -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+Group.new('LspDiagnosticsDefaultWarning'         , c.yellow                           , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+Group.new('LspDiagnosticsDefaultInformation'     , c.blue                             , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+Group.new('LspDiagnosticsDefaultHint'            , c.mono5                            , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+Group.new('LspDiagnosticsVirtualTextError'       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used for "Error" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+Group.new('LspDiagnosticsVirtualTextWarning'     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used for "Warning" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+Group.new('LspDiagnosticsVirtualTextInformation' , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used for "Error" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+Group.new('LspDiagnosticsVirtualTextHint'        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used for "Hint" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
+Group.new('LspDiagnosticsVirtualUnderlineError'  , c.none                             , g.LspDiagnosticsDefaultError       , uc)                                 -- Used to underline "Error" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsUnderlineError'         , c.none                             , g.LspDiagnosticsDefaultWarning     , uc)                                 -- Used to underline "Warning" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsUnderlineInformation'   , c.none                             , g.LspDiagnosticsDefaultInformation , uc)                                 -- Used to underline "Information" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsUnderlineHint'          , c.none                             , g.LspDiagnosticsDefaultHint        , uc)                                 -- Used to underline "Hint" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsFloatError'             , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used to color "Error" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+Group.new('LspDiagnosticsFloatWarning'           , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used to color "Warning" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+Group.new('LspDiagnosticsFloatInformation'       , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used to color "Information" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+Group.new('LspDiagnosticsFloatHint'              , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used to color "Hint" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
+Group.new('LspDiagnosticsSignError'              , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used to color "Error" signs in sign column. See vim.lsp.diagnostic.set_signs()
+Group.new('LspDiagnosticsSignWarning'            , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used to color "Warning" signs in sign column. See vim.lsp.diagnostic.set_signs()
+Group.new('LspDiagnosticsSignInformation'        , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used to color "Information" signs in sign column. See vim.lsp.diagnostic.set_signs()
+Group.new('LspDiagnosticsSignHint'               , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used to color "Hint" signs in sign column. See vim.lsp.diagnostic.set_signs()
+
+-- Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
+Group.new('TSAnnotation'         , c.yellow       , c.none        , no)            -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+Group.new('TSAttribute'          , c.cyan         , c.none        , no)            -- unstable TODO: docs
+Group.new('TSBoolean'            , g.Boolean      , g.Boolean     , g.Boolean)     -- For booleans
+Group.new('TSCharacter'          , g.Character    , g.Character   , g.Character)   -- For characters
+Group.new('TSComment'            , g.Comment      , g.Comment     , g.Comment)     -- For commented blocks.
+Group.new('TSConstructor'        , c.cyan         , c.none        , no)            -- For constructor calls and definitions: {} in Lua, and Java constructors.
+Group.new('TSConditional'        , g.Conditional  , g.Conditional , g.Conditional) -- For keywords related to conditionnals
+Group.new('TSConstant'           , g.Constant     , g.Constant    , g.Constant)    -- For constants
+Group.new('TSConstBuiltin'       , c.orange       , c.none        , no)            -- For constant that are built in the language: `nil` in Lua
+Group.new('TSConstMacro'         , c.cyan         , c.none        , no)            -- For constants that are defined by macros: `NULL` in C
+Group.new('TSError'              , g.Error        , g.Error       , g.Error)       -- For syntax/par
+Group.new('TSException'          , g.Exception    , g.Exception   , g.Exception)   -- For exception related keywords.
+Group.new('TSField'              , c.red          , c.none        , no)            -- For fields.
+Group.new('TSFloat'              , g.Float        , g.Float       , g.Float)       -- For floats
+Group.new('TSFunction'           , g.Function     , g.Function    , g.Function)    -- For function (calls and definitions
+Group.new('TSFuncBuiltin'        , g.Function     , g.Function    , g.Function)    -- For builtin functions: `table.insert` in Lua
+Group.new('TSFuncMacro'          , c.yellow       , c.none        , no)            -- For macro defined functions (calls and definitions): each `macro_rules` in Rust.
+Group.new('TSInclude'            , g.Include      , g.Include     , g.Include)     -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+Group.new('TSKeyword'            , g.Keyword      , g.Keyword     , g.Keyword)     -- For keywords that don't fall in previous categories.
+Group.new('TSKeywordFunction'    , c.red          , c.none        , no)            -- For keywords used to define a function.
+Group.new('TSLabel'              , g.Label        , g.Label       , g.Label)       -- For labels: `label:` in C and `:label:` in Lua
+Group.new('TSMethod'             , c.blue         , c.none        , no)            -- For method calls and definitions.
+Group.new('TSNamespace'          , c.red_light    , c.none        , no)            -- For identifiers referring to modules and namespaces.
+Group.new('TSNumber'             , g.Number       , g.Number      , g.Number)      -- For integers
+Group.new('TSOperator'           , g.Operator     , g.Operator    , g.Operator)    -- For any operator: `+`, but also `->` and `*` in C
+Group.new('TSParameter'          , c.cyan         , c.none        , no)            -- For parameters of a function.
+Group.new('TSParameterReference' , g.TSParameter  , g.TSParameter , g.TSParameter) -- For references to parameters of a function.
+Group.new('TSProperty'           , g.TSField      , g.TSField     , g.TSField)     -- Same as `TSField`.
+Group.new('TSPunctDelimiter'     , g.Delimiter    , g.Delimiter   , g.Delimiter)   -- For delimiters ie: `.`
+Group.new('TSPunctBracket'       , c.blue         , c.none        , no)            -- For brackets and parens
+Group.new('TSPunctSpecial'       , c.white        , c.none        , no)            -- For special punctuation that does not fall in the categories before
+Group.new('TSRepeat'             , g.Repeat       , g.Repeat      , g.Repeat)      -- For keywords related to loops
+Group.new('TSString'             , g.String       , g.String      , g.String)      -- For strings
+Group.new('TSStringRegex'        , c.green_light  , c.none        , no)            -- For regexes
+Group.new('TSStringEscape'       , c.cyan         , c.none        , no)            -- For escape characters within a string
+Group.new('TSStructure'          , g.Structure    , g.Structure   , g.Structure)   -- This is left as an exercise for the reader.
+Group.new('TSStrong'             , c.none         , c.none        , b)             -- For text to be represented with strong.
+Group.new('TSTag'                , g.Tag          , g.Tag         , g.Tag)         -- Tags like html tag names.
+Group.new('TSTagDelimeter'       , c.blue         , c.none        , no)            -- Tag delimiter link < > /
+Group.new('TSText'               , c.green_dark   , c.none        , no)            -- For strings considered text in a markup language.
+Group.new('TSEmphasis'           , c.none         , c.none        , i)             -- For text to be represented with emphasis.
+Group.new('TSUnderline'          , c.blue         , c.none        , ul)            -- TSUnderline
+Group.new('TSTitle'              , c.none         , c.none        , b)             -- Text that is part of a title.
+Group.new('TSLiteral'            , c.green_dark   , c.none        , no)            -- Literal text.
+Group.new('TSURI'                , c.blue         , c.none        , ul)            -- Any URI like a link or email.
+Group.new('TSType'               , g.Type         , g.Type        , g.Type)        -- For types.
+Group.new('TSTypeBuiltin'        , g.Type         , g.Type        , g.Type)        -- For builtin types (you guessed it, right ?).
+Group.new('TSVariable'           , c.white        , c.none        , no)            -- Variable names
+Group.new('TSVariableBuiltin'    , c.yellow       , c.none        , no)            -- Variable names that are defined by the languages, like `this` or `self`.
+
 -- Language-Specific Highlighting {{{1
 
 -- Asciidoc
@@ -521,7 +605,7 @@ Group.new('manTitle'  , g.String , g.String , g.String)
 Group.new('manFooter' , c.mono4  , c.none   , no)
 
 -- Plugin Highlighting {{{1
-  --
+
 -- Netrw (vim builtin)
 Group.new('netrwDir'      , c.blue       , c.none , no)
 Group.new('netrwClassify' , c.blue       , c.none , no)
@@ -557,89 +641,8 @@ Group.new('TelescopePreviewBorder'  , c.mono5     , c.none   , no)
 Group.new('TelescopeMatching'       , c.black     , c.yellow , no)
 Group.new('TelescopePromptPrefix'   , c.purple    , c.none   , b)
 
-
--- Neovim Builtins {{{1
-
--- Neovim Support
-Group.new('healthError'   , g.Error  , g.Error , g.Error)
-Group.new('healthWarning' , c.yellow , c.none  , no)
-Group.new('healthSuccess' , c.green  , c.none  , no)
-Group.new('TermCursorNC'  , c.white  , c.none  , r)
-
--- LSP Groups (descriptions and ordering from `:h lsp-highlight`)
-Group.new('LspReferenceText'                     , c.none                             , c.none                             , b + ul)                             -- used for highlighting "text" references
-Group.new('LspReferenceRead'                     , c.none                             , c.none                             , b + ul)                             -- used for highlighting "read" references
-Group.new('LspReferenceWrite'                    , c.none                             , c.none                             , b + ul)                             -- used for highlighting "write" references
-Group.new('LspDiagnosticsDefaultError'           , g.Error                            , g.Error                            , g.Error)                            -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-Group.new('LspDiagnosticsDefaultWarning'         , c.yellow                           , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-Group.new('LspDiagnosticsDefaultInformation'     , c.blue                             , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-Group.new('LspDiagnosticsDefaultHint'            , c.mono5                            , c.none                             , no)                                 -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-Group.new('LspDiagnosticsVirtualTextError'       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used for "Error" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-Group.new('LspDiagnosticsVirtualTextWarning'     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used for "Warning" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-Group.new('LspDiagnosticsVirtualTextInformation' , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used for "Error" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-Group.new('LspDiagnosticsVirtualTextHint'        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used for "Hint" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-Group.new('LspDiagnosticsVirtualUnderlineError'  , c.none                             , g.LspDiagnosticsDefaultError       , uc)                                 -- Used to underline "Error" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsUnderlineError'         , c.none                             , g.LspDiagnosticsDefaultWarning     , uc)                                 -- Used to underline "Warning" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsUnderlineInformation'   , c.none                             , g.LspDiagnosticsDefaultInformation , uc)                                 -- Used to underline "Information" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsUnderlineHint'          , c.none                             , g.LspDiagnosticsDefaultHint        , uc)                                 -- Used to underline "Hint" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsFloatError'             , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used to color "Error" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-Group.new('LspDiagnosticsFloatWarning'           , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used to color "Warning" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-Group.new('LspDiagnosticsFloatInformation'       , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used to color "Information" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-Group.new('LspDiagnosticsFloatHint'              , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used to color "Hint" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
-Group.new('LspDiagnosticsSignError'              , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used to color "Error" signs in sign column. See vim.lsp.diagnostic.set_signs()
-Group.new('LspDiagnosticsSignWarning'            , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used to color "Warning" signs in sign column. See vim.lsp.diagnostic.set_signs()
-Group.new('LspDiagnosticsSignInformation'        , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used to color "Information" signs in sign column. See vim.lsp.diagnostic.set_signs()
-Group.new('LspDiagnosticsSignHint'               , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used to color "Hint" signs in sign column. See vim.lsp.diagnostic.set_signs()
-
--- Nvim Treesitter Groups (descriptions and ordering from `:h nvim-treesitter-highlights`)
-Group.new('TSAnnotation'         , c.yellow       , c.none        , no)            -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-Group.new('TSAttribute'          , c.cyan         , c.none        , no)            -- unstable TODO: docs
-Group.new('TSBoolean'            , g.Boolean      , g.Boolean     , g.Boolean)     -- For booleans
-Group.new('TSCharacter'          , g.Character    , g.Character   , g.Character)   -- For characters
-Group.new('TSComment'            , g.Comment      , g.Comment     , g.Comment)     -- For commented blocks.
-Group.new('TSConstructor'        , c.cyan         , c.none        , no)            -- For constructor calls and definitions: {} in Lua, and Java constructors.
-Group.new('TSConditional'        , g.Conditional  , g.Conditional , g.Conditional) -- For keywords related to conditionnals
-Group.new('TSConstant'           , g.Constant     , g.Constant    , g.Constant)    -- For constants
-Group.new('TSConstBuiltin'       , c.orange       , c.none        , no)            -- For constant that are built in the language: `nil` in Lua
-Group.new('TSConstMacro'         , c.cyan         , c.none        , no)            -- For constants that are defined by macros: `NULL` in C
-Group.new('TSError'              , g.Error        , g.Error       , g.Error)       -- For syntax/par
-Group.new('TSException'          , g.Exception    , g.Exception   , g.Exception)   -- For exception related keywords.
-Group.new('TSField'              , c.red          , c.none        , no)            -- For fields.
-Group.new('TSFloat'              , g.Float        , g.Float       , g.Float)       -- For floats
-Group.new('TSFunction'           , g.Function     , g.Function    , g.Function)    -- For function (calls and definitions
-Group.new('TSFuncBuiltin'        , g.Function     , g.Function    , g.Function)    -- For builtin functions: `table.insert` in Lua
-Group.new('TSFuncMacro'          , c.yellow       , c.none        , no)            -- For macro defined functions (calls and definitions): each `macro_rules` in Rust.
-Group.new('TSInclude'            , g.Include      , g.Include     , g.Include)     -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-Group.new('TSKeyword'            , g.Keyword      , g.Keyword     , g.Keyword)     -- For keywords that don't fall in previous categories.
-Group.new('TSKeywordFunction'    , c.red          , c.none        , no)            -- For keywords used to define a function.
-Group.new('TSLabel'              , g.Label        , g.Label       , g.Label)       -- For labels: `label:` in C and `:label:` in Lua
-Group.new('TSMethod'             , c.blue         , c.none        , no)            -- For method calls and definitions.
-Group.new('TSNamespace'          , c.red_light    , c.none        , no)            -- For identifiers referring to modules and namespaces.
-Group.new('TSNumber'             , g.Number       , g.Number      , g.Number)      -- For integers
-Group.new('TSOperator'           , g.Operator     , g.Operator    , g.Operator)    -- For any operator: `+`, but also `->` and `*` in C
-Group.new('TSParameter'          , c.cyan         , c.none        , no)            -- For parameters of a function.
-Group.new('TSParameterReference' , g.TSParameter  , g.TSParameter , g.TSParameter) -- For references to parameters of a function.
-Group.new('TSProperty'           , g.TSField      , g.TSField     , g.TSField)     -- Same as `TSField`.
-Group.new('TSPunctDelimiter'     , g.Delimiter    , g.Delimiter   , g.Delimiter)   -- For delimiters ie: `.`
-Group.new('TSPunctBracket'       , c.blue         , c.none        , no)            -- For brackets and parens
-Group.new('TSPunctSpecial'       , c.white        , c.none        , no)            -- For special punctuation that does not fall in the categories before
-Group.new('TSRepeat'             , g.Repeat       , g.Repeat      , g.Repeat)      -- For keywords related to loops
-Group.new('TSString'             , g.String       , g.String      , g.String)      -- For strings
-Group.new('TSStringRegex'        , c.green_light  , c.none        , no)            -- For regexes
-Group.new('TSStringEscape'       , c.cyan         , c.none        , no)            -- For escape characters within a string
-Group.new('TSStructure'          , g.Structure    , g.Structure   , g.Structure)   -- This is left as an exercise for the reader.
-Group.new('TSStrong'             , c.none         , c.none        , b)             -- For text to be represented with strong.
-Group.new('TSTag'                , g.Tag          , g.Tag         , g.Tag)         -- Tags like html tag names.
-Group.new('TSTagDelimeter'       , c.blue         , c.none        , no)            -- Tag delimiter link < > /
-Group.new('TSText'               , c.green_dark   , c.none        , no)            -- For strings considered text in a markup language.
-Group.new('TSEmphasis'           , c.none         , c.none        , i)             -- For text to be represented with emphasis.
-Group.new('TSUnderline'          , c.blue         , c.none        , ul)            -- TSUnderline
-Group.new('TSTitle'              , c.none         , c.none        , b)             -- Text that is part of a title.
-Group.new('TSLiteral'            , c.green_dark   , c.none        , no)            -- Literal text.
-Group.new('TSURI'                , c.blue         , c.none        , ul)            -- Any URI like a link or email.
-Group.new('TSType'               , g.Type         , g.Type        , g.Type)        -- For types.
-Group.new('TSTypeBuiltin'        , g.Type         , g.Type        , g.Type)        -- For builtin types (you guessed it, right ?).
-Group.new('TSVariable'           , c.white        , c.none        , no)            -- Variable names
-Group.new('TSVariableBuiltin'    , c.yellow       , c.none        , no)            -- Variable names that are defined by the languages, like `this` or `self`.
+-- Quick-scope (unblevable/quick-scope)
+Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
+Group.new('QuickScopeSecondary'    , c.none , c.none , b + uc)
 
 -- }}}1
