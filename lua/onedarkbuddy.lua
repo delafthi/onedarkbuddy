@@ -641,6 +641,15 @@ Group.new('TelescopePreviewBorder'  , c.mono5     , c.none   , no)
 Group.new('TelescopeMatching'       , c.black     , c.yellow , no)
 Group.new('TelescopePromptPrefix'   , c.purple    , c.none   , b)
 
+-- Rainbow delimeters (p00f/nvim-ts-rainbow)
+Group.new('rainbowcol1', c.blue, c.none, no)
+Group.new('rainbowcol2', c.cyan, c.none, no)
+Group.new('rainbowcol3', c.green, c.none, no)
+Group.new('rainbowcol4', c.yellow, c.none, no)
+Group.new('rainbowcol5', c.orange, c.none, no)
+Group.new('rainbowcol6', c.red, c.none, no)
+Group.new('rainbowcol7', c.purple, c.none, no)
+
 -- Quick-scope (unblevable/quick-scope)
 -- Setting the colors here, makes the underlines stay after leaving the line
 -- Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
