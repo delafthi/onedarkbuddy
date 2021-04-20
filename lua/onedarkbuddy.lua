@@ -655,4 +655,13 @@ Group.new('rainbowcol7' , c.blue   , c.none , no)
 -- Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
 -- Group.new('QuickScopeSecondary'    , c.none , c.none , b + uc)
 
+-- Vimwiki (vimwiki/vimwiki)
+Group.new('VimwikiHeader1' , c.red    , c.none , b)
+Group.new('VimwikiHeader2' , c.orange , c.none , b)
+Group.new('VimwikiHeader3' , c.yellow , c.none , b)
+Group.new('VimwikiHeader4' , c.blue   , c.none , b)
+Group.new('VimwikiHeader5' , c.purple , c.none , b)
+Group.new('VimwikiHeader6' , c.green  , c.none , b)
+
+
 -- }}}1
