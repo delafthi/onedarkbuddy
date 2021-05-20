@@ -650,6 +650,9 @@ Group.new('rainbowcol5' , c.green  , c.none , no)
 Group.new('rainbowcol6' , c.cyan   , c.none , no)
 Group.new('rainbowcol7' , c.blue   , c.none , no)
 
+-- Indent-blanklines (lukas-reineke/indent-blankline.nvim)
+Group.new('IndenBlanklineChar', c.mono0, c.none, no)
+
 -- Quick-scope (unblevable/quick-scope)
 -- Setting the colors here, makes the underlines stay after leaving the line
 -- Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
