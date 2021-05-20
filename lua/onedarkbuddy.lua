@@ -195,10 +195,10 @@ Group.new('LspDiagnosticsVirtualTextError'       , g.LspDiagnosticsDefaultError 
 Group.new('LspDiagnosticsVirtualTextWarning'     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used for "Warning" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
 Group.new('LspDiagnosticsVirtualTextInformation' , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used for "Error" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
 Group.new('LspDiagnosticsVirtualTextHint'        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint)        -- Used for "Hint" diangostic virtal text. See vim.lsp.diagnsotic.set_virtual_text()
-Group.new('LspDiagnosticsVirtualUnderlineError'  , c.none                             , g.LspDiagnosticsDefaultError       , uc)                                 -- Used to underline "Error" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsUnderlineError'         , c.none                             , g.LspDiagnosticsDefaultWarning     , uc)                                 -- Used to underline "Warning" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsUnderlineInformation'   , c.none                             , g.LspDiagnosticsDefaultInformation , uc)                                 -- Used to underline "Information" diagnostics. See vim.lsp.diagnostic.set_underline()
-Group.new('LspDiagnosticsUnderlineHint'          , c.none                             , g.LspDiagnosticsDefaultHint        , uc)                                 -- Used to underline "Hint" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsVirtualUnderlineError'  , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , uc)                                 -- Used to underline "Error" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsUnderlineError'         , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , uc)                                 -- Used to underline "Warning" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsUnderlineInformation'   , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , uc)                                 -- Used to underline "Information" diagnostics. See vim.lsp.diagnostic.set_underline()
+Group.new('LspDiagnosticsUnderlineHint'          , g.LspDiagnosticsDefaultHint        , g.LspDiagnosticsDefaultHint        , uc)                                 -- Used to underline "Hint" diagnostics. See vim.lsp.diagnostic.set_underline()
 Group.new('LspDiagnosticsFloatError'             , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError       , g.LspDiagnosticsDefaultError)       -- Used to color "Error" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
 Group.new('LspDiagnosticsFloatWarning'           , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning     , g.LspDiagnosticsDefaultWarning)     -- Used to color "Warning" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
 Group.new('LspDiagnosticsFloatInformation'       , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation , g.LspDiagnosticsDefaultInformation) -- Used to color "Information" diagnostic messages in diagnostics float. See vim.lsp.diagnsotic.show_line_diagnostics()
@@ -657,5 +657,14 @@ Group.new('IndenBlanklineChar', c.mono0, c.none, no)
 -- Setting the colors here, makes the underlines stay after leaving the line
 -- Group.new('QuickScopePrimary'      , c.none , c.none , b + ul)
 -- Group.new('QuickScopeSecondary'    , c.none , c.none , b + uc)
+
+-- Vimwiki (vimwiki/vimwiki)
+Group.new('VimwikiHeader1' , c.red    , c.none , b)
+Group.new('VimwikiHeader2' , c.orange , c.none , b)
+Group.new('VimwikiHeader3' , c.yellow , c.none , b)
+Group.new('VimwikiHeader4' , c.blue   , c.none , b)
+Group.new('VimwikiHeader5' , c.purple , c.none , b)
+Group.new('VimwikiHeader6' , c.green  , c.none , b)
+
 
 -- }}}1
